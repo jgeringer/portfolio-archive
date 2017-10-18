@@ -99,10 +99,6 @@ export default function cardLoader(){
     `;    
 
 
-    $('.Card').off('click').on('click', function(e){
-        //$(document).off('pan.hammerPan');
-    });
-
     //Tapping begin!
     $('.Card').off("click.cardOpen").on("click.cardOpen", function(e){
         e.preventDefault();
