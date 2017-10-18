@@ -1,0 +1,43 @@
+{
+  "name": "cardslider",
+  "version": "1.0.0",
+  "description": "",
+  "main": "./dist/js/main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jgeringer/cardSlider.git"
+  },
+  "author": "Joe Geringer",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jgeringer/cardSlider/issues"
+  },
+  "homepage": "https://github.com/jgeringer/cardSlider#readme",
+  "devDependencies": {
+    "babel-preset-es2015": "^6.22.0",
+    "babelify": "^7.3.0",
+    "browser-sync": "^2.18.6",
+    "browserify": "^13.3.0",
+    "browsersync": "0.0.1-security",
+    "connect-history-api-fallback": "^1.3.0",
+    "connect-modrewrite": "^0.10.1",
+    "gulp": "^3.9.1",
+    "gulp-babel": "^6.1.2",
+    "gulp-imagemin": "^3.1.1",
+    "gulp-less": "^3.3.0",
+    "gulp-postcss": "^6.3.0",
+    "gulp-sourcemaps": "^2.4.0",
+    "gulp-typescript": "^3.1.4",
+    "gulp-uglify": "^2.0.1",
+    "gulp-util": "^3.0.8",
+    "postcss-cssnext": "^2.9.0",
+    "tsify": "^3.0.0",
+    "typescript": "^2.1.5",
+    "vinyl-buffer": "^1.0.0",
+    "vinyl-source-stream": "^1.1.0",
+    "watchify": "^3.8.0"
+  }
+}

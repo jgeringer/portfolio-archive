@@ -1,0 +1,269 @@
+@import "../common/variables.less";
+
+//use rems for font size, and em everything else (padding, margin).
+
+.CardListingWrapper{
+    overflow: hidden;
+    z-index: 5;
+    position: relative;
+    opacity: 1;
+    visibility: visible;
+    transition: top var(--timeXLong) var(--transitionBase),
+                opacity var(--timeXLong) ease,
+                visibility var(--timeXLong) ease;
+
+    &.is-hiding{
+        opacity: 0;
+        visibility: hidden;
+    }
+
+    .Card.is-selected{
+        opacity: 0;
+    }
+
+    .CardListing{
+        height: 70vh;
+        max-height: 400px;
+        margin-top: 1em;
+        margin-bottom: 1em;
+        //transition: width var(--timeLong) ease;
+        //display: flex;
+        //margin-left: 2%;
+
+        @media @bpMedium{
+            flex-wrap: wrap;
+            height: auto;
+            max-height: initial;
+            margin-left: 0;
+            padding-right: 2%;
+            transform: translateX(0)!important;
+        }
+
+        @media @bpLarge{
+            padding-right: 1%;
+        }
+
+        &.is-animating{
+            transition: transform 200ms cubic-bezier( 0.5, 0, 0.5, 1 )
+        }
+    }
+} 
+
+#Card-detail{
+    visibility: hidden;
+    opacity: 0;
+    top: var(--cardVH);
+    position: absolute;
+    width:100%;
+    background: #fff;
+    transition: visibility 333ms ease,
+                opacity 333ms ease,
+                height 333ms ease;
+    //transform-origin: top;
+    overflow: hidden;
+    height: 30vh;
+
+    @media @bpMedium{
+        top: var(--cardVH--md);
+    }
+
+    .Card-detailContent{
+        opacity:0;
+        animation: animatePaddingTop 500ms 300ms forwards;
+    }
+
+    &.is-active{
+        visibility: visible;
+        left:0;
+        opacity: 1;
+        height: 100vh;
+        z-index: 50;
+        height: auto;
+    }    
+}
+
+
+body > .Card{
+    &.is-selected{
+        width: ~"calc(var(--cardWidth) - 20px)";
+        //width: var(--cardWidth);
+        @media @bpMedium{
+            width: ~"calc(var(--cardWidth--md) - 1%)";
+            //width: var(--cardWidth--md);
+        }
+        @media @bpLarge{
+            width: ~"calc(var(--cardWidth--lg) - 0.3%)";
+            //width: var(--cardWidth--md);
+        }
+        &.is-top{
+            width: 100%!important;
+        }    
+        
+    }
+}
+
+.Card{
+    //border: solid 4px #efefef;
+    //border-radius: 8px;
+    box-shadow: 0 5px 10px #b5b5b5;
+    background-color: #ccc;
+    height: 350px;
+    position: relative;
+    text-align: center;
+    float: left;
+    display: flex-item;
+    transition: height var(--timeXLong) var(--transitionBase),
+                top 333ms ease,
+                left 333ms ease,
+                width 333ms ease,
+                //border 333ms ease,
+                border-radius 333ms ease,
+                box-shadow 333ms ease;
+    margin: 0 20px 0 0;
+    width: var(--cardWidth);
+    will-change: top, left, height, width;
+
+    background-size: cover;
+    
+    @media @bpMedium {
+        background-size: cover;
+        width: var(--cardWidth--md);
+        margin: 0 0 2% 2%;
+        max-height: initial;
+    }
+
+    @media @bpLarge {
+        width: var(--cardWidth--lg);
+        margin: 0 0 2% 2%;
+    }
+    
+
+    h2{
+        transform: translate(-50%, -50%);
+        left: 50%;
+        position: absolute;
+        color: #8c8c8c; // rgba(255,255,255,.6);
+        width:100%;
+        top: 50%;
+        margin: 0;
+        padding: .5rem;
+        font-weight: 200;
+        line-height: 1.6rem;
+    }
+
+    &.is-fixed{
+        position: fixed;
+        //width: 65.4%; //63%;
+        z-index: 10;
+        margin: 0;        
+    }
+    &.is-top{
+        position: fixed;
+        top:0!important; 
+        left:0!important;        
+        width:100%;
+        height: var(--cardVH);
+        margin:0;
+
+        height: 60vh;
+        max-height: 60vh;
+
+        @media @bpMedium{
+            height: var(--cardVH--md);
+            // background-attachment: fixed;
+            // background-size: 100% auto;
+            // background-position: 0 0;
+        }
+
+        &.is-now-abs{
+            position: absolute;
+            box-shadow: 0 0 0 0;
+            border-radius: 0;
+            border:0;
+            z-index: 50;
+            //animation...    
+            .Card--footer{
+                background-color:#e8e8e8;
+            }
+        }
+    }
+
+    &.is-going-back{
+        animation: fadeOut 300ms forwards;
+    }
+
+    &.is-active{
+        width: 100%;
+        height: var(--cardVH);
+        box-shadow: none;
+        text-align: left;
+        border:0;
+        margin:0 auto;
+        @media @bpMedium{
+            height: var(--cardVH--md);
+        }
+        h2{
+            transform: translateX(0%);
+            left: 2rem;
+            color: rgba(255,255,255,9);
+        }
+    }
+    &--footer{
+        position: absolute;
+        z-index: 5;
+        bottom:0;
+        left:0;
+        width:100%;
+        background-color: #fff; // rgba(46, 80, 93, 0.9);
+        height: 82px;
+        transform: translate3d(0px,0px,0px);
+        //transition: background var(--timeXLong) var(--transitionBase); 
+        transition: background-color 500ms ease;
+
+        
+        &.is-sticky{
+            position: fixed;
+            top: 0;
+        }
+
+        > div{
+            position: relative;
+            height: 82px;
+        }
+
+    }
+}
+
+.Button{
+    &--close{
+        position: fixed;
+        top:0;
+        right:0;
+        z-index: 15;
+    }
+}
+
+.CardCarousel{
+    width: 200%;
+    display: flex;
+    overflow: hidden;
+    &.is-animating{
+        transition: transform 200ms cubic-bezier( 0.5, 0, 0.5, 1 )
+    }
+    >*{
+        float: left;
+        width: 100%;
+        position: relative;
+        height: 60vh;
+        background-size: contain;
+        background-position: 50%;
+        background-repeat: no-repeat;
+        background-color: #fff;
+        &:first-child{
+            background-size: cover;
+        }
+        img{
+            max-width: 100%;
+        }
+    }
+}

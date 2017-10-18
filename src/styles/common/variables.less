@@ -1,0 +1,83 @@
+:root{
+    --transitionBase:cubic-bezier(0.215, 0.610, 0.355, 1);
+    //--transitionBase: ease;
+    
+    //default times
+    --timeXShort: 100ms;
+    --timeShort: 200ms;
+    --timeMedium: 300ms;
+    --timeLong: 400ms;
+    --timeXLong: 500ms;
+    --timeXLLong: 800ms;
+
+    //triple times (for testing only)
+    // --timeXShort: 300ms;
+    // --timeShort: 600ms;
+    // --timeMedium: 900ms;
+    // --timeLong: 1200ms;
+    // --timeXLong: 1500ms;
+
+    --cardWidth: 70%;
+    --cardWidth--md: 48%;
+    --cardWidth--lg: 31%;
+
+    --cardVH: 60vh;
+    --cardVH--md: 80vh;
+}
+
+@baseFontSize: 16;
+
+// - Breakpoint Widths -
+@widthXSmall: (420  / @baseFontSize);
+@widthSmall:  (544  / @baseFontSize);
+@widthMedium: (768  / @baseFontSize);
+@widthLarge:  (920  / @baseFontSize);
+@widthXLarge: (1600 / @baseFontSize);
+
+@for-phone-only: ~"only screen and (max-width:@{widthMedium}em), print";
+@bpXSmall: ~"only screen and (min-width: @{widthXSmall}em), print";
+@bpSmall: ~"only screen and (min-width: @{widthSmall}em), print";
+@bpMedium: ~"only screen and (min-width: @{widthMedium}em), print";
+@bpLarge: ~"only screen and (min-width: @{widthLarge}em), print";
+@bpXLarge: ~"only screen and (min-width: @{widthXLarge}em)";
+
+
+@keyframes cardListingWrapper{
+    from {
+        height: 70vh;
+    }
+    to {
+        height: 37vh
+    }
+}
+
+@keyframes fadeOut{
+    from {
+        opacity:1;
+    }
+    to {
+        opacity:0;
+    }
+}
+
+@keyframes animatePaddingTop {
+    0%{
+        padding: 0 1em;
+        opacity: 0;
+        visibility: hidden;
+    }
+    100%{
+        padding: 1em;
+        opacity: 1;
+        visibility: visible;
+    }
+}
+
+@keyframes animateBgColor {
+    0%{
+        color:#fff;
+    }
+    100%{
+        color:#000;
+    }
+}
