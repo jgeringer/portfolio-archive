@@ -22,8 +22,7 @@
     }
 
     .CardListing{
-        height: 70vh;
-        max-height: 400px;
+        height: 400px;
         margin-top: 1em;
         margin-bottom: 1em;
         //transition: width var(--timeLong) ease;
@@ -107,7 +106,7 @@ body > .Card{
     //border-radius: 8px;
     box-shadow: 0 5px 10px #b5b5b5;
     background-color: #ccc;
-    height: 350px;
+    height: 400px;
     position: relative;
     text-align: center;
     float: left;
@@ -119,7 +118,7 @@ body > .Card{
                 //border 333ms ease,
                 border-radius 333ms ease,
                 box-shadow 333ms ease;
-    margin: 0 20px 0 0;
+    margin: 0 0 0 30px!important;
     width: var(--cardWidth);
     will-change: top, left, height, width;
 
@@ -127,13 +126,13 @@ body > .Card{
     
     @media @bpMedium {
         background-size: cover;
-        width: var(--cardWidth--md);
-        margin: 0 0 2% 2%;
+        width: var(--cardWidth--md)!important;
+        margin: 0 0 2% 2%!important;
         max-height: initial;
     }
 
     @media @bpLarge {
-        width: var(--cardWidth--lg);
+        width: var(--cardWidth--lg)!important;
         margin: 0 0 2% 2%;
     }
     
@@ -155,7 +154,7 @@ body > .Card{
         position: fixed;
         //width: 65.4%; //63%;
         z-index: 10;
-        margin: 0;        
+        margin: 0!important;
     }
     &.is-top{
         position: fixed;

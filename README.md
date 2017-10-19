@@ -4,6 +4,7 @@
 ###Pattern:
 *Using [SuitCSS](https://suitcss.github.io/)
 *Not [BEM](https://css-tricks.com/bem-101/) yet anyway.
+*[BEM Naming Convention](http://getbem.com/naming/)
 
 ###Handle Type Scaling:
 ```css
@@ -30,6 +31,9 @@
 ##JS
 [TypeScript Gulp Build System](https://www.typescriptlang.org/docs/handbook/gulp.html)
 [ES2015 Notes](https://babeljs.io/learn-es2015/)
+
+##Third Party
+*[Swiper](http://idangero.us/swiper/)
 
 ##To Do:
 * ~~Add carousel functionality~~
